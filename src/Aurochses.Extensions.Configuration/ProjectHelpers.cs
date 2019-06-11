@@ -32,6 +32,8 @@ namespace Aurochses.Extensions.Configuration
             {
                 directoryInfo = directoryInfo.Parent;
 
+                if (directoryInfo == null) break;
+
                 var projectDirectoryInfo = new DirectoryInfo(Path.Combine(directoryInfo.FullName, projectRelativePath));
                 if (projectDirectoryInfo.Exists)
                 {
